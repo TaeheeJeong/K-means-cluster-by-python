@@ -1,8 +1,0 @@
-# K-means cluster Analysis  
-# week4 assignment for Machine learning for Data Analysis
-
-dataset: tree_addhealth.csv
-
-features: 'ALCEVR1','MAREVER1','ALCPROBS1','DEVIANT1','VIOL1',
-'DEP1','ESTEEM1','SCHCONN1','PARACTV', 'PARPRES','FAMCONCT'
-

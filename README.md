@@ -46,16 +46,7 @@ The two clusters are generally distinct. The result shows that 2 cluster solutio
 
 ## For the 2-cluster, clustering variable means was calculated by cluster
 
-Clustering variable means by cluster
-               index   ALCEVR1  MAREVER1  ALCPROBS1  DEVIANT1     VIOL1  \
-cluster                                                                   
-0        3294.039323 -0.311849 -0.395225  -0.314965 -0.390028 -0.264485   
-1        3268.383251  0.666337  0.854393   0.635583  0.811733  0.542640   
-
-             DEP1   ESTEEM1   PARPRES   PARACTV  FAMCONCT  SCHCONN1  
-cluster                                                              
-0       -0.319537  0.269350  0.182298  0.158440  0.348749  0.358134  
-1        0.631274 -0.520256 -0.379803 -0.320525 -0.720928 -0.766280 
+The calculated results were included in output.pdf.
 
 cluster_0 has positive characters  for self-esteem, parental presence, parental activities, family connectedness, school connectedness, and no experience of alcohol, marijuana, alcohol problems, deviant behaviors, violence, and depression.
 Meanwhile, cluster 1 has negative characters for self-esteem, parental presence, parental activities, family connectedness, school connectedness, and experience of alcohol, marijuana, alcohol problems, deviant behaviors, violence, and depression.
@@ -64,52 +55,9 @@ Thus, this distinction is reasonable.
 ## ANOVA test
 In order to externally validate the clusters, an Analysis of Variance (ANOVA) was conducted to check difference between the clusters on grade point average (GPA). A tukey test was used for post hoc comparisons between the clusters. 
 
+ANOVA and tukey test results were included in output.pdf.
+
 Results indicated that there is significant difference between the clusters on GPA (F(2, 3202)=v, p~.0000). 
 Also, the tukey post hoc comparisons showed significant difference between the two clusters on GPA. 
 Adolescents in cluster 1 had the higher GPA as mean=2.96, sd=0.73, and cluster 2 had the lower GPA as mean=2.51, sd=0.78.
-
-
-
-                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:                   GPA1   R-squared:                       0.073
-Model:                            OLS   Adj. R-squared:                  0.073
-Method:                 Least Squares   F-statistic:                     252.4
-Date:                Fri, 19 Aug 2016   Prob (F-statistic):           9.34e-55
-Time:                        22:20:05   Log-Likelihood:                -3605.9
-No. Observations:                3202   AIC:                             7216.
-Df Residuals:                    3200   BIC:                             7228.
-Df Model:                           1                                         
-Covariance Type:            nonrobust                                         
-===================================================================================
-                      coef    std err          t      P>|t|      [95.0% Conf. Int.]
------------------------------------------------------------------------------------
-Intercept           2.9607      0.016    185.500      0.000         2.929     2.992
-C(cluster)[T.1]    -0.4503      0.028    -15.886      0.000        -0.506    -0.395
-==============================================================================
-Omnibus:                      161.469   Durbin-Watson:                   2.013
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):               93.690
-Skew:                          -0.272   Prob(JB):                     4.52e-21
-Kurtosis:                       2.363   Cond. No.                         2.42
-==============================================================================
-
-###means for GPA by cluster
-             GPA1
-cluster          
-0        2.960677 
-1        2.510345
-
-###standard deviations for GPA by cluster
-             GPA1
-cluster          
-0        0.729718
-1        0.781150
-
-###Multiple Comparison of Means - Tukey HSD,FWER=0.05
-=============================================
-group1 group2 meandiff  lower   upper  reject
----------------------------------------------
-  0      1    -0.4503  -0.5059 -0.3947  True 
-
-
 

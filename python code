@@ -112,3 +112,44 @@ plt.ylabel('Canonical variable 2')
 plt.title('Scatterplot of Canonical Variables for 2 Clusters')
 plt.show()
 
+# clustering variable means by cluster
+clus_train.reset_index(level=0, inplace=True)
+cluslist=list(clus_train['index'])
+labels=list(model3.labels_)
+newlist=dict(zip(cluslist, labels))
+newclus=pd.DataFrame.from_dict(newlist, orient='index')
+newclus.columns = ['cluster']
+
+newclus.reset_index(level=0, inplace=True)
+merged_train=pd.merge(clus_train, newclus, on='index')
+merged_train.head(n=100)
+merged_train.cluster.value_counts()
+
+clustergrp = merged_train.groupby('cluster').mean()
+print ("Clustering variable means by cluster")
+print(clustergrp)
+
+# AVOVA and Tukey HSD
+gpa_data=data_clean['GPA1']
+gpa_train, gpa_test = train_test_split(gpa_data, test_size=.3, random_state=123)
+gpa_train1=pd.DataFrame(gpa_train)
+gpa_train1.reset_index(level=0, inplace=True)
+merged_train_all=pd.merge(gpa_train1, merged_train, on='index')
+sub1 = merged_train_all[['GPA1', 'cluster']].dropna()
+
+gpamod = smf.ols(formula='GPA1 ~ C(cluster)', data=sub1).fit()
+print (gpamod.summary())
+
+print ('means for GPA by cluster')
+m1= sub1.groupby('cluster').mean()
+print (m1)
+
+print ('standard deviations for GPA by cluster')
+m2= sub1.groupby('cluster').std()
+print (m2)
+
+mc1 = multi.MultiComparison(sub1['GPA1'], sub1['cluster'])
+res1 = mc1.tukeyhsd()
+print(res1.summary())
+
+

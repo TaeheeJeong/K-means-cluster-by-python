@@ -69,6 +69,7 @@ Also, the tukey post hoc comparisons showed significant difference between the t
 Adolescents in cluster 1 had the higher GPA as mean=2.96, sd=0.73, and cluster 2 had the lower GPA as mean=2.51, sd=0.78.
 
 
+
                             OLS Regression Results                            
 ==============================================================================
 Dep. Variable:                   GPA1   R-squared:                       0.073
@@ -92,19 +93,19 @@ Skew:                          -0.272   Prob(JB):                     4.52e-21
 Kurtosis:                       2.363   Cond. No.                         2.42
 ==============================================================================
 
-means for GPA by cluster
+###means for GPA by cluster
              GPA1
 cluster          
 0        2.960677 
 1        2.510345
 
-standard deviations for GPA by cluster
+###standard deviations for GPA by cluster
              GPA1
 cluster          
 0        0.729718
 1        0.781150
 
-Multiple Comparison of Means - Tukey HSD,FWER=0.05
+###Multiple Comparison of Means - Tukey HSD,FWER=0.05
 =============================================
 group1 group2 meandiff  lower   upper  reject
 ---------------------------------------------
